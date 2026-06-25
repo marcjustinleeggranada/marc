@@ -1,8 +1,8 @@
 # SULO
 
-An AI that brings ordinary Filipinos out of the dark on the documents that decide their rights. Amazon Comprehend · LLM · Vite · React · [Your Wallet/Auth Stack]
+An AI that brings ordinary Filipinos out of the dark on the documents that decide their rights — without ever pretending to be a lawyer. Amazon Comprehend · Quantized LLM · OCR · ASR/TTS · Vite · React.
 
-SULO—Filipino for *torch*—is an AI-powered legal-literacy and document-understanding platform. A Filipino points their phone at a contract, a notice, or a loan agreement—by upload, photo, or voice—and SULO explains, in plain language and in their own tongue, what the document is, what it obligates them to do, what deadlines it carries, and which clauses deserve a second look. It does not give legal advice. It gives legal understanding, and it routes people to real help when they need it. Trust lives in clarity, not in dense legalese.
+SULO is an AI-powered legal-literacy and document-understanding platform. A Filipino points their phone at a contract, a notice, or a loan agreement — by upload, photo, or voice — and SULO explains, in plain language and in their own tongue, what the document is, what it obligates them to do, what deadlines it carries, and which clauses deserve a second look. It does not give legal advice. It gives legal understanding, and it routes people to real help when they need it so that safety lives in comprehension, not in dense legal jargon.
 
 ## Demo & submission
 
@@ -10,34 +10,30 @@ Quick links for reviewers — everything the submission rubric asks for, in one 
 
 ### Live demo
 
-* **Deployed app:** `(input this here)` — connect `(input this here)` and try a document upload.
-* **Walkthrough video:** `(input this here)` — full feature tour.
+* **Deployed app:** `(input this here)` — try an image upload or a voice interaction.
+* **Walkthrough video:** `(input this here)` — full feature tour showing legal text-to-speech routing.
 
 ### Mobile responsive
 
-Captured on Android Chrome at 1080×2400 — hero, typography, and interactive risk highlights reflow cleanly without horizontal scroll to serve everyday mobile-first users.
+Captured on Android Chrome at 1080×2400 — hero layout, camera-capture flow, typography, and interactive risk highlights all reflow cleanly as a Progressive Web App (PWA) layout without horizontal scroll.
 
 ### CI/CD
 
 Runs on every push to main and on every PR: `npm ci` → `npm run build` against the frontend. Workflow lives at `(input this here)`.
 
-## Contract addresses & transactions / Core Backend Services
+## Core Backend & Model Pipelines
 
-* **Main LLM/Comprehend Router Service:** `(input this here)`
-* **Database / Storage address:** `(input this here)`
-* **Sample Document Analysis Transaction/Log ID:** `(input this here)`
-
-## Token / Pricing Integration (If applicable)
-
-* **Asset used by the demo:** `(input this here)`
-* **No custom token deployed.** If you later switch settlements to a payment portal, set `(input this here)` in the frontend `.env` and list the gateway address here.
+* **Amazon Comprehend NLP Routing Service:** `(input this here)`
+* **Quantized LLM Inference Host Location:** `(input this here)`
+* **Vector Store Semantic Search Endpoint:** `(input this here)`
+* **Sample Document Analysis / Processing Log ID:** `(input this here)`
 
 ## Deployed Infrastructure
 
-The legal routing, speech routing, and parsing service is live.
+The legal routing, text extraction, and parsing service is live.
 
 * **Service/Model ID:** `(input this here)`
-* **Type:** LLM Pipeline / Custom NLP Classifier (Amazon Comprehend)
+* **Type:** Quantized LLM Pipeline / Custom NLP Classifier / RAG Engine
 * **Network/Host:** `(input this here)`
 * **Explorer/Logs:** `(input this here)`
 
@@ -45,15 +41,15 @@ The legal routing, speech routing, and parsing service is live.
 
 ## Why SULO
 
-The law protects Filipinos on paper. Labor laws, lending regulations, and consumer rights all exist—but the system is structurally inaccessible. Legally navigating daily life in the Philippines is broken, confusing, and stressful.
+The law protects Filipinos on paper. Labor laws, lending regulations, and consumer rights all exist—but the system is structurally inaccessible. Legally navigating daily life in the Philippines is broken, confusing, and stressful. 
 
-SULO removes the stress. You upload any document, and the AI handles the rest, breaking down liabilities on low-cost, fast rails. Anyone can verify what they are signing before it is too late.
+SULO removes the stress. You upload any document or record an audio clip, and the AI handles the rest, breaking down liabilities on low-cost, fast rails. Anyone can verify what they are signing before it is too late.
 
 ### What you get
 
-* **Quiet predictability** — once a document is scanned, the fine print is instantly demystified.
+* **Quiet predictability** — once a document is scanned or voiced, the fine print is instantly demystified.
 * **Privacy-native** — private documents are parsed securely; raw personal details never leak.
-* **Verifiable** — every clause interpretation and risk rating maps directly to verified provisions, keeping answers grounded.
+* **Verifiable** — every clause interpretation and risk rating is strictly mapped to actual Philippine law references (Labor Code, RA 11106, etc.) using a curated knowledge base as a single source of truth.
 
 ---
 
@@ -61,19 +57,21 @@ SULO removes the stress. You upload any document, and the AI handles the rest, b
 
 | Brand Word | Means |
 | :--- | :--- |
-| **Scan/Upload** | Submitting a document via PDF, image (OCR), or audio recording (ASR) to be broken down. |
-| **Red Flag** | A clause that is heavily skewed against the user or potentially illegal under the Labor Code. |
-| **Plain Language** | The translated overview ("Ano ang ibig sabihin nito sa madaling salita?"). |
-| **Obligation Balance** | Visual metrics showing who bears the burden in the contract framework. |
+| **SULO** | Filipino for *torch*—bringing clarity to hidden, dark legal clauses. |
+| **Scan/Upload (OCR)** | Submitting an image of a document to be transformed into machine-readable text. |
+| **Voice Query (ASR)** | Submitting audio or spoken code-switching language to ask questions about obligations. |
+| **Plain Language (TTS)** | The spoken and written overview ("Ano ang ibig sabihin nito sa madaling salita?"). |
+| **Red Flag** | A clause that is heavily skewed against the user or potentially illegal under current DOLE/Philippine regulations. |
 
 ---
 
 ## How it works
 
-1. **Multi-Modal Ingestion** — Drop an Employment Contract, Loan Agreement, Barangay Summons, or upload audio. The pipeline uses **OCR** for images and **ASR** for voice recordings.
-2. **Auto-Classification & Language Routing** — The system detects the language (including complex Taglish code-switching) and matches it against specific compliance checklists.
-3. **Entity & Risk Extraction** — Amazon Comprehend extracts dates, names, monetary amounts, and flags dangerous clauses (e.g., hidden fees, unremitted benefits).
-4. **Clarity Flows** — The system provides localized, side-by-side breakdowns and legal text-to-speech (**TTS**) fallback features for maximum accessibility.
+1. **Capture & Extract (OCR / ASR)** — Point a phone at a contract or speak directly into the app. SULO reads images or transcribes spoken Filipino/Taglish.
+2. **Auto-Classification & Language Routing** — The system integrates Amazon Comprehend to detect the language profile and document type to pull up specific legal compliance frameworks.
+3. **Semantic Grounding (RAG & Vector Store)** — The system queries a curated knowledge base of true legal provisions (Labor Code, current amendments) to prevent AI hallucinations.
+4. **Local Comprehension Execution** — A compressed, Quantized LLM reads the context to highlight deadlines, monetary balances, and suspicious clauses.
+5. **Clarity Flows (TTS)** — The user reads or listens to an interactive, side-by-side translation to safely understand their rights without entering legal advice boundaries.
 
 ---
 
@@ -85,9 +83,10 @@ The processing repository is organized into a modular pipeline; its core public 
 
 | Layer | Stack |
 | :--- | :--- |
-| **Frontend** | React, Vite, Tailwind, Zustand, Progressive Web App (PWA) Setup |
-| **AI Engine** | Amazon Comprehend NLP Pipeline, Quantized LLM, and **Vector Store** for RAG |
-| **Database** | `(input this here)` |
+| **Frontend** | React, Vite, Tailwind, Progressive Web App (PWA) |
+| **AI Engine** | Custom Amazon Comprehend NLP Pipeline, Quantized Mobile-Optimized LLM, RAG |
+| **Data Engine** | Vector Store (Semantic Embeddings Retrieval Index) |
+| **Perception** | OCR (Text Extraction) & ASR / TTS (Speech Components) |
 
 ---
 
@@ -96,7 +95,8 @@ The processing repository is organized into a modular pipeline; its core public 
 Copy `frontend/.env.example` to `frontend/.env` and set:
 
 * `VITE_COMPREHEND_API_URL` — Backend processing pipeline URL.
-* `VITE_LLM_GATEWAY_URL` — LLM interface for real-time contract Q&A.
+* `VITE_LOCAL_LLM_GATEWAY_URL` — Quantized LLM endpoint interface for real-time contract Q&A.
+* `VITE_VECTOR_STORE_URL` — RAG knowledge base search interface.
 * `VITE_APP_ENV` — Development or production indicator.
 * `(input any extra environment variables here)`
 
@@ -104,9 +104,9 @@ The example variables in `.env.example` are for development purposes only.
 
 ## Local development
 
-1. **Shared Documents API (Optional but recommended):** `(input this here)`
+1. **Shared Knowledge Base API:** `(input this here)`
 2. **Frontend Setup:** `(input commands like npm run dev here)`
-3. **Contract/Service Setup:** `(input setup instructions here)`
+3. **Model Weights Deployment:** `(input instructions for loading quantized LLM here)`
 
 ## Deploying on Vercel
 
@@ -122,7 +122,7 @@ The Vite app lives at `frontend`, not the repository root.
 ## Privacy & custody
 
 * **Non-custodial Data** — Sensitive Personal Identifiable Information (PII) like TIN, SSS, and bank accounts are flagged locally to warn you before data transmission occurs.
-* **Secure Infrastructure** — The backend only caches parsed clause frameworks anonymously to compile generalized risk trends without exposing personal contracts.
+* **On-Device Optimization** — Our core quantized models aim to transition workflows into local execution blocks to minimize remote exposures of sensitive documents.
 
 ---
 
@@ -136,7 +136,7 @@ SULO directly targets the systemic legal comprehension crisis in the Philippines
 * *Visual Suggestion:* A photo of a Filipino family sitting around a kitchen table looking stressed over a legal notice instead of sitting with an attorney.
 
 ### 📖 Comprehension Crisis
-* **Only 70.8% of Filipinos aged 10–64 are functionally literate** under the modern comprehension standard (PSA FLEMMS).
+* **Only 70.8% of Filipinos aged 10–64 are functionally literate** under the modern comprehension standard (PSA FLEMMS). 
 * **24.8 million Filipinos struggle to understand what they read**, and 21% of senior high school graduates fail functional literacy expectations.
 * *Visual Suggestion:* An infographic split-panel showing two people looking at the exact same contract—one completely lost, one with a clear path forward.
 
@@ -158,10 +158,10 @@ SULO directly targets the systemic legal comprehension crisis in the Philippines
 ---
 
 ### 💡 The Connecting Thread
-> Filipinos are signing documents and entering agreements they do not fully understand. By the time they realize what happened, it is already too late. The law exists. The rights exist. The gap is in comprehension.
+> Filipinos are signing documents and entering agreements they do not fully understand. By the time they realize what happened, it is already too late. The law exists. The rights exist. The gap is in comprehension. 
 > 
 > **A right you cannot read, in a language you weren't taught, explained by a lawyer you can't afford—is not really a right at all.**
 
 ---
 
-Built for the Hackathon. Powered by Advanced NLP. Made with care.
+Built for the Hackathon. Powered by SULO Core Engineering. Made with care.
