@@ -4,6 +4,26 @@ An AI that brings ordinary Filipinos out of the dark on the documents that decid
 
 SULO is an AI-powered legal-literacy and document-understanding platform. A Filipino points their phone at a contract, a notice, or a loan agreement — by upload, photo, or voice — and SULO explains, in plain language and in their own tongue, what the document is, what it obligates them to do, what deadlines it carries, and which clauses deserve a second look. It does not give legal advice. It gives legal understanding, and it routes people to real help when they need it so that safety lives in comprehension, not in dense legal jargon.
 
+---
+
+## Problem & Solution
+
+### The Problem: A Crisis of Legal Comprehension
+Legally navigating daily life in the Philippines is structurally broken, leaving millions of vulnerable citizens exposed to exploitation due to three main barriers:
+* **The Legal Access Gap:** According to the World Justice Project Survey, **80% of Filipinos have zero access to legal assistance**. Of the minor 20% who manage to get guidance, 72% depend purely on unverified advice from friends and family—leaving a mere **15% who ever consult an actual attorney**. 
+* **The Language & Jargon Barrier:** For nearly a century, legal drafting and law instruction in the Philippines have been executed entirely in complex English legalese. With 8 major regional languages and over 85 distinct dialects, standard legal agreements are fundamentally built for lawyers, not ordinary signees.
+* **The Comprehension Deficit:** The PSA FLEMMS reports that **only 70.8% of Filipinos aged 10–64 are functionally literate** under modern analytical standards. This translates to **24.8 million citizens struggling to comprehend what they read**, including 21% of senior high school graduates who drop below baseline expectations. 
+
+Consequently, predatory online loan apps manipulate contracts with hidden interest rates for over **47.5 million users**, and workplace violations remain so rampant that DOLE inspections required **3.28 million workers to recover stolen or lost wages**. As DOLE explicitly records: *a lack of basic awareness among workers is the primary reason abuses persist.*
+
+### The Solution: Literacy, Not Advice
+SULO solves this crisis by shifting the paradigm from inaccessible legal defense to localized, upfront document comprehension. 
+* **Accessibility Over Jurisprudence:** SULO acts as an immediate, non-custodial, and easy-to-use bridge. It strips away high-barrier legal constraints by accepting multimodal inputs—photos of physical text, document uploads, or voice recordings in native code-switching configurations (like Taglish).
+* **AI-Powered Demystification:** Using an integrated pipeline of Amazon Comprehend for document entity categorization, OCR for scanning physical pages, and localized ASR/TTS engines, the platform identifies precisely *who* is bound, *what* monetary obligations or hidden fees are present, and *when* deadlines fall.
+* **Grounding via RAG & Quantization:** Instead of hallucinating answers, SULO matches text metrics directly against a single source of truth—a verified, date-stamped knowledge base containing true Philippine legal frameworks (such as the Labor Code and RA 11106). The resulting plain-language summaries are spoken back or displayed side-by-side via a compressed, mobile-responsive Quantized LLM, protecting user safety through understanding before a pen ever hits paper.
+
+---
+
 ## Demo & submission
 
 Quick links for reviewers — everything the submission rubric asks for, in one place.
@@ -36,20 +56,6 @@ The legal routing, text extraction, and parsing service is live.
 * **Type:** Quantized LLM Pipeline / Custom NLP Classifier / RAG Engine
 * **Network/Host:** `(input this here)`
 * **Explorer/Logs:** `(input this here)`
-
----
-
-## Why SULO
-
-The law protects Filipinos on paper. Labor laws, lending regulations, and consumer rights all exist—but the system is structurally inaccessible. Legally navigating daily life in the Philippines is broken, confusing, and stressful. 
-
-SULO removes the stress. You upload any document or record an audio clip, and the AI handles the rest, breaking down liabilities on low-cost, fast rails. Anyone can verify what they are signing before it is too late.
-
-### What you get
-
-* **Quiet predictability** — once a document is scanned or voiced, the fine print is instantly demystified.
-* **Privacy-native** — private documents are parsed securely; raw personal details never leak.
-* **Verifiable** — every clause interpretation and risk rating is strictly mapped to actual Philippine law references (Labor Code, RA 11106, etc.) using a curated knowledge base as a single source of truth.
 
 ---
 
@@ -123,37 +129,6 @@ The Vite app lives at `frontend`, not the repository root.
 
 * **Non-custodial Data** — Sensitive Personal Identifiable Information (PII) like TIN, SSS, and bank accounts are flagged locally to warn you before data transmission occurs.
 * **On-Device Optimization** — Our core quantized models aim to transition workflows into local execution blocks to minimize remote exposures of sensitive documents.
-
----
-
-## The Problem Is Real — And the Numbers Prove It
-
-SULO directly targets the systemic legal comprehension crisis in the Philippines:
-
-### 🔓 Legal Access Gap
-* **80% of Filipinos have no access to legal help** (World Justice Project Survey).
-* Of the 20% who do, 72% rely entirely on friends/family—**only 15% manage to consult an actual lawyer**.
-* *Visual Suggestion:* A photo of a Filipino family sitting around a kitchen table looking stressed over a legal notice instead of sitting with an attorney.
-
-### 📖 Comprehension Crisis
-* **Only 70.8% of Filipinos aged 10–64 are functionally literate** under the modern comprehension standard (PSA FLEMMS). 
-* **24.8 million Filipinos struggle to understand what they read**, and 21% of senior high school graduates fail functional literacy expectations.
-* *Visual Suggestion:* An infographic split-panel showing two people looking at the exact same contract—one completely lost, one with a clear path forward.
-
-### 🌐 Language Barrier
-* For close to a century, nearly **all law teaching and legal drafting in the Philippines has been done in English**.
-* With 8 major languages and over 85 dialects, documents are fundamentally structured for lawyers, not ordinary citizens.
-* *Visual Suggestion:* Close-up photo of dense English legalese text right beside a confused worker.
-
-### 👷 Labor & Workplace Abuse
-* DOLE inspected 30,000 establishments and found violations so rampant that **3.28 million workers had to recover lost wages**.
-* Common systemic issues include unpaid overtime, illegal deductions, and unremitted SSS/PhilHealth/Pag-IBIG logs. DOLE explicitly notes that **lack of awareness among workers is the primary reason abuses persist**.
-* *Visual Suggestion:* A photo of a worker staring anxiously at a payslip with unknown deduction values highlighted in red ink.
-
-### 💸 Predatory Lending & Loan App Abuse
-* **47.5 million Filipinos used online loan apps**, fueled by an unbanked population of roughly 37 million adults.
-* Lenders deliberately deploy confusing language so borrowers sign without understanding actual penalty risks. Victims drop complaints because the legal process is too tedious—**they just want the harassment to stop**.
-* *Visual Suggestion:* A smartphone screen displaying an ominous collection message with hidden fee fine print in the background.
 
 ---
 
